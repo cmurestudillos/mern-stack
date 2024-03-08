@@ -1,15 +1,17 @@
 {
-  "name": "mern-stack-backend",
+  "name": "stack-api-randomuser-backend",
   "version": "1.0.0",
-  "author": "Carlos Mur (cmur_85)",
+  "author": "Carlos Mur",
   "license": "MIT",  
-  "description": "Ejemplo de MERN usando la api \"https://randomuser.me/\"",
+  "description": "Backend usando la api \"https://randomuser.me/\"",
   "main": "index.js",
   "scripts": {
-    "dev": "npm run build:dev && nodemon .",
-    "start": "npm run build:prd && node .",
-    "build:dev": "cp .env.development .env",
-    "build:prd": "cp .env.production .env"
+    "start": "node .",
+    "dev": "npm run copy-env-dev",
+    "prd": "npm run copy-env-prd",
+    "copy-env-dev": "cp .env.development .env",
+    "copy-env-prd": "cp .env.production .env",
+    "deploy": "gcloud app deploy && gcloud app browse -s stack-api-randomuser"
   },
   "keywords": [
     "node.js",
@@ -19,7 +21,6 @@
     "mongoDB",
     "express.js"
   ],
-
   "dependencies": {
     "axios": "^0.21.1",
     "chalk": "^4.1.2",
